@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // Load index page currently pulling from db to populate will need to change this to axios to populate
   // can be used for custom and favorited later
-  app.get("/", function(req, res) {
+  app.get("/index", function(req, res) {
     db.Cocktails.findAll({}).then(function(dbCocktails) {
       res.render("index",{
         msg: "Popular Cocktails!",

@@ -29,7 +29,7 @@ module.exports = function(app) {
   });
 };*/
 
-  // app.get("/", function(req,res){ // "age" is the input from age page.
+  //app.get("/", function(req,res){ // "age" is the input from age page.
   //   let age = req.body.age;       // format is MMDDYYYY, for exp: 07101990
                             
   //   let dif = moment( age , "MMDDYYY").fromNow();
@@ -43,11 +43,6 @@ module.exports = function(app) {
   //   }
   // });
 
-  app.get("/api/api_cocktail", function(req, res) { // bottom api show button
-    db.Custom_drink.findAll({}).then(function(db) {
-      res.json(db);
-    });
-  });
 
   // user login
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -107,7 +102,7 @@ module.exports = function(app) {
 
   // Get all cocktails
   app.get("/api/cocktails", function(req, res) {
-    db.Cocktails.findAll({}).then(function(dbCocktails) {
+    db.Custom_drink.findAll({}).then(function(dbCocktails) {
       res.json(dbCocktails);
     });
   });
@@ -115,14 +110,22 @@ module.exports = function(app) {
   // Written for future use for custom drinks
   // Create a new cocktail
   app.post("/api/cocktails", function(req, res) {
-    db.Cocktails.create(req.body).then(function(dbCocktails) {
+    db.Custom_drink.create(req.body).then(function(dbCocktails) {
       res.json(dbCocktails);
     });
   });
 
   // Delete a cocktail by id
   app.delete("/api/cocktails/:id", function(req, res) {
-    db.Cocktails.destroy({ where: { id: req.params.id } }).then(function(
+    db.Custom_drink.destroy({ where: { id: req.params.id } }).then(function(
+      dbCocktails
+    ) {
+      res.json(dbCocktails);
+    });
+  });
+
+  app.put("/api/cocktails/:id", function(req, res) {
+    db.Custom_drink.update({ where: { id: req.params.id } }).then(function(
       dbCocktails
     ) {
       res.json(dbCocktails);
