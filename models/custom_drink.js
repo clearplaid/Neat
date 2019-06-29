@@ -35,5 +35,13 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
     });
+
+    Custom_drink.associate = models => {
+      Custom_drink.belongsTo(models.User, {
+          foreignKey: {
+              allowNull: false
+          }
+      })
+  }
     return Custom_drink;
   };

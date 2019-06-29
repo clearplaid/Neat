@@ -133,6 +133,30 @@ module.exports = function(app) {
   })
 
 
+  app.post("/custom", function(req, res) {
+    // check if user is logged in
+    if (req.user) {
+      db.user_favorites.create({
+        name: req.body.name,
+        category: req.body.category,
+        alcoholic: req.body.alcoholic,
+        glass: req.body.glass,
+        instructions: req.body.instructions,
+        pic: req.body.pic,
+        ingredients: req.body.ingredients,
+        measurements: req.body.measurements,
+        UserId: req.user.id
+      })
+      .then(user => console.log('success'))
+      .catch(err => console.log(err))
+    } else {
+      // user is not logged in
+      res.send(false)
+    }
+  })
+
+
+
 
   // ***** boilerplate code ***** 
 
