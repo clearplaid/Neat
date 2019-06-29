@@ -46,7 +46,7 @@ module.exports = function(app) {
 
   // user login
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.redirect('/index')
+    res.redirect('/')
 
     console.log("login successful");
   });
@@ -73,17 +73,8 @@ module.exports = function(app) {
     console.log("logout successful");
   });
 
-  app.post("/test", function(req, res) {
-    if (req.user) {
-      // req.user.id holds their id from the database
-      console.log('req.user.id: ' + req.user.id)
-    } else {
-      res.send(false)
-    }
-  })
-  
+  // search drinks by name or ingredient  
   app.post("/search", function(req, res) {  // search drinks by name or ingredient
-
     if (req.body.method === "name") {
       axios.searchByName(req.body.data)
         .then(data => res.json(data))
@@ -113,6 +104,7 @@ module.exports = function(app) {
   app.post("/favorite", function(req, res) {
     // check if user is logged in
     if (req.user) {
+      console.log(req.body)
       db.user_favorites.create({
         name: req.body.name,
         category: req.body.category,
@@ -130,6 +122,17 @@ module.exports = function(app) {
       // user is not logged in
       res.send(false)
     }
+  })
+
+  app.delete("/api/delete/:id", function(req, res) {
+    db.user_favorites.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(() => {
+      res.status(200).end()
+    })
   })
 
 
@@ -169,9 +172,9 @@ module.exports = function(app) {
 
   // Written for future use for custom drinks
   // Create a new cocktail
-  app.post("/api/cocktails", function(req, res) {
-    db.Custom_drink.create(req.body).then(function(dbCocktails) {
-      res.json(dbCocktails);
+  app.post("/api/customize", function(req, res) {
+    db.Custom_drink.create(req.body).then(function(dbCustomDrink) {
+      res.json(dbCustomDrink);
     });
   });
 
