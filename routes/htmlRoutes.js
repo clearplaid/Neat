@@ -6,7 +6,8 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // req.user will determine if user is logged in
     // res.render("splash", {user: req.user})
-    res.render('splash', { user: req.user })
+    if (req.user) res.redirect("/index");
+    else res.render('splash', { user: req.user })
   });
 
   // Load index page pull from db to populate 
