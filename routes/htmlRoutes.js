@@ -5,7 +5,8 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     // req.user will determine if user is logged in
-    res.render("splash", {user: req.user})
+    // res.render("splash", {user: req.user})
+    res.render('splash', { user: req.user })
   });
 
   // Load index page pull from db to populate 
@@ -64,7 +65,7 @@ module.exports = function(app) {
         })
 
         // render profile page with favorites
-        res.render("profile", { favorites: favs })
+        res.render("profile", { favorites: favs, user: req.user })
       })
     }
   })
@@ -79,6 +80,18 @@ module.exports = function(app) {
     ) {
       res.render("cocktails", {
         cocktails: dbCocktails
+      });
+    });
+  });
+
+  app.get("/customize/:id", function(req, res) {
+    db.Cocktails.findOne({ where: { id: req.params.id } }).then(function(
+      dbCocktails
+    ) {
+      var Fing=(dbCocktails.ing).split("-");
+      res.render("customize", {
+        cc : dbCocktails ,
+        ccFing : Fing[0]
       });
     });
   });
