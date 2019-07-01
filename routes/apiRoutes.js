@@ -132,11 +132,30 @@ module.exports = function(app) {
     }
   })
 
+  app.delete("/api/delete/:id", function(req, res) {
+    db.user_favorites.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(() => {
+      res.status(200).end()
+    })
+  })
 
-  app.post("/custom", function(req, res) {
-    // check if user is logged in
+  // Get all cocktails for main display
+  app.get("/api/cocktails", function(req, res) {
+    db.Cocktails.findAll({}).then(function(dbCocktails) {
+      res.json(dbCocktails);
+    });
+  });
+
+  // Create a custom cocktail
+  app.post("/custom_drink", function(req, res) {
+   
+      // check if user is logged in
     if (req.user) {
-      db.user_favorites.create({
+      db.custom_drinks.create({
         name: req.body.name,
         category: req.body.category,
         alcoholic: req.body.alcoholic,
@@ -153,7 +172,8 @@ module.exports = function(app) {
       // user is not logged in
       res.send(false)
     }
-  })
+  }
+ 
 
 
 
