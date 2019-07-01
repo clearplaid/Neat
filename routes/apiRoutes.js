@@ -4,44 +4,19 @@ var moment = require('moment');
 let axios = require("./axiosCalls.js")
 
 module.exports = function(app) {
-
-  /*// Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });
-};*/
-
-  //app.get("/", function(req,res){ // "age" is the input from age page.
-  //   let age = req.body.age;       // format is MMDDYYYY, for exp: 07101990
+  app.get("/verify", function(req,res){ // "age" is the input from age page.
+    let age = req.body.age;       // format is MMDDYYYY, for exp: 07101990
                             
-  //   let dif = moment( age , "MMDDYYY").fromNow();
-  //   if (parseInt(dif)>=21){
-  //     res.redirect('/index');
-  //     console.log("User passed 21");
-  //   }
-  //   else {
-  //     res.redirect('https://www.cdc.gov/alcohol/fact-sheets/minimum-legal-drinking-age.htm');
-  //     console.log("User is under 21");
-  //   }
-  // });
+    let dif = moment( age , "MMDDYYY").fromNow();
+    if (parseInt(dif)>=21){
+      res.redirect('/index');
+      console.log("User passed 21");
+    }
+    else {
+      res.redirect('https://www.cdc.gov/alcohol/fact-sheets/minimum-legal-drinking-age.htm');
+      console.log("User is under 21");
+    }
+  });
 
 
   // user login
@@ -151,11 +126,12 @@ module.exports = function(app) {
   });
 
   // Create a custom cocktail
-  app.post("/custom_drink", function(req, res) {
-   
+  app.post("/custom_drinks", function(req, res) {
+    console.log(JSON.stringify(req.body))
       // check if user is logged in
     if (req.user) {
-      db.custom_drinks.create({
+      console.log(req.body)
+      db.Custom_drinks.create({
         name: req.body.name,
         category: req.body.category,
         alcoholic: req.body.alcoholic,
@@ -172,27 +148,6 @@ module.exports = function(app) {
       // user is not logged in
       res.send(false)
     }
-  }
- 
-
-
-
-
-  // ***** boilerplate code ***** 
-
-  // Get all cocktails
-  app.get("/api/cocktails", function(req, res) {
-    db.Custom_drink.findAll({}).then(function(dbCocktails) {
-      res.json(dbCocktails);
-    });
-  });
-
-  // Written for future use for custom drinks
-  // Create a new cocktail
-  app.post("/api/cocktails", function(req, res) {
-    db.Custom_drink.create(req.body).then(function(dbCocktails) {
-      res.json(dbCocktails);
-    });
   });
 
   // Delete a cocktail by id

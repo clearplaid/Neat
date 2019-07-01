@@ -14,8 +14,12 @@
           <div class="form-group col-md-4">
             <label for="customAlc">Alcohol?</label>
             <select class="form-control" id="customAlc">
+<<<<<<< HEAD
               <option placeholder="{{cc.alcoholic}}"></option>  
               <option ></option>  
+=======
+              <option></option>   
+>>>>>>> e6868c0153b78bff8d2681f43a71cc2d5282f54f
               <option>Alcoholic</option>
               <option>Non-Alcoholic</option>
             </select>
@@ -23,8 +27,7 @@
           <div class="form-group col-md-4">
             <label for="customDrinkCat">Choose Your Category</label>
             <select class="form-control" id="customDrinkCat">
-              <option placeholder="{{cc.category}}"></option>  
-              <option ></option>  
+              <option>"{{cc.category}}"</option>  
               <option>Ordinary Drink</option>
               <option>Cocktail</option>
               <option>Milk/Float/Shake</option>
@@ -41,7 +44,7 @@
           <div class="form-group col-md-4">
             <label for="customGlass">Choose Your Glassware</label>
             <select class="form-control" id="customGlass">
-              <option placeholder="{{cc.glass}}"></option>  
+              <option>"{{cc.glass}}"</option>  
               <option>Beer Glass</option>
               <option>Beer Mug</option>
               <option>Beer Pilsner</option>
@@ -82,20 +85,29 @@
         </div>
         <div class="form-row align-items-center">
           <div class="form-group col-6">
+<<<<<<< HEAD
             <label for="customMeasure">Measurements</label>
             <input type="text" class="form-control customMeas" placeholder="How much?"></input>
             <input type="text" class="form-control customMeas"></input>
             <input type="text" class="form-control customMeas"></input>
             <input type="text" class="form-control customMeas"></input>
             <input type="text" class="form-control customMeas"></input>
+=======
+            <label for="customIng">Measurements</label>
+            <input type="text" class="form-control customMeas" placeholder="How much?">
+            <input type="text" class="form-control customMeas">
+            <input type="text" class="form-control customMeas">
+            <input type="text" class="form-control customMeas">
+            <input type="text" class="form-control customMeas">
+>>>>>>> e6868c0153b78bff8d2681f43a71cc2d5282f54f
           </div>
           <div class="form-group col-6">
             <label for="customIng">Ingredients</label>
-            <input type="text" class="form-control customIng" placeholder="What is it?"></input>
-            <input type="text" class="form-control customIng"></input>
-            <input type="text" class="form-control customIng"></input>
-            <input type="text" class="form-control customIng"></input>
-            <input type="text" class="form-control customIng"></input>
+            <input type="text" class="form-control customIng" placeholder="What is it?">
+            <input type="text" class="form-control customIng">
+            <input type="text" class="form-control customIng">
+            <input type="text" class="form-control customIng">
+            <input type="text" class="form-control customIng">
           </div>
         </div>
         <button type="submit" class="btn btn-warning btn-block" id="customSave">Save Customized Libation</button>

@@ -16,7 +16,7 @@ module.exports = function(app) {
     db.Cocktails.findAll({}).then(function(dbCocktails) {
       res.render("index",{
         user: req.user,
-        msg: "Popular Cocktails!",
+        msg: "Shaken or Stirred",
         cocktails: dbCocktails
       });
     });
@@ -54,31 +54,31 @@ module.exports = function(app) {
 
           //item.dataValues contains all drink data
           favs.push(item.dataValues)
-              // get user custom made drinks from database
-            // let custom = []
+            // get user custom made drinks from database
+            let custom = []
       
-            // db.Custom_drinks.findAll({
-            //   where: {
-            //     UserId: req.user.id
-            //   }
-            // })
-            // .then(data => {
-            //   data.forEach(item => {
-            //     let cv = item.dataValues
+            db.Custom_drinks.findAll({
+              where: {
+                UserId: req.user.id
+              }
+            })
+            .then(data => {
+              data.forEach(item => {
+                let cv = item.dataValues
 
-            //     // remove quotes and brackets from string
-            //     // cv.ingredients = (cv.ingredients.replace(/[\[\]"]+/g,'')).split(',')
-            //     // cv.measurements = (cv.measurements.replace(/[\[\]"]+/g,'')).split(',')
+                // remove quotes and brackets from string
+                // cv.ingredients = (cv.ingredients.replace(/[\[\]"]+/g,'')).split(',')
+                // cv.measurements = (cv.measurements.replace(/[\[\]"]+/g,'')).split(',')
 
-            //     // combine ingredients and measurements into one array
-            //     // cv.ingr = []
-            //     // for (let i = 0; i < cv.ingredients.length; i++) {
-            //     //   cv.ingr.push(cv.ingredients[i] + ' ' + cv.measurements[i])
-            //     // }
+                // combine ingredients and measurements into one array
+                // cv.ingr = []
+                // for (let i = 0; i < cv.ingredients.length; i++) {
+                //   cv.ingr.push(cv.ingredients[i] + ' ' + cv.measurements[i])
+                // }
 
-            //     //item.dataValues contains all drink data
-            //     custom.push(item.dataValues)
-            //   })
+                //item.dataValues contains all drink data
+                custom.push(item.dataValues)
+              })
 
           // render profile page with favorites and custom drinks
           res.render("profile", { 
@@ -87,7 +87,7 @@ module.exports = function(app) {
           })
         })
       })
-    // })
+    })
   }
 })
 

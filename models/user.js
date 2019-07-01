@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     User.hasMany(models.user_favorites)
   }
   User.associate = models => {
-    User.hasMany(models.Custom_drink)
+    User.hasMany(models.Custom_drinks)
   }
 
   // check if an unhashed password entered by the user can be compared to the hashed password stored in our database
