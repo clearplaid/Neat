@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Candac123!.",
+    "password": "root",
     "database": "neat_db",
     "host": "localhost",
     "dialect": "mysql"
