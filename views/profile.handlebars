@@ -1,14 +1,18 @@
-<div class="container">
+ <div class="row">
+    <div class="container-fluid text-center titlehero" style="padding: 0px;">
+      <div class="col-md-12">
+        <h1 class="herotext">Favorites:</h1>
+      </div>
+    </div>
+  </div>
 
-    <a href="/custom_page" class="btn btn-info float-right">My Custom Drinks</a>
-
-    <h1 class="text-center mt-5 mb-5">Favorites: </h1>
+<div class="container" id="profpage">
     
     {{#each favorites}}
 
         {{!-- bootstrap card: horizontal --}}
 
-        <div class="card mb-3" style="max-width: 100%;">
+        <div class="card mb-3" style="max-width: 100%; padding: 1em 0; border: 1px solid #a1a1a177;">
 
             <div class="row no-gutters">
 
@@ -19,7 +23,10 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h1 class="card-title">{{name}}</h5>
+                    <h1 class="card-title profile">{{name}}</h1>
+                    </div>
+                    <div class="card-body">
+
 
                         <div class="row mt-3 mb-3">
                             <div class="col-md-4">
@@ -45,6 +52,7 @@
             </div>
 
         </div>
-
+    <br>
+    <br>
     {{/each}}
 </div>

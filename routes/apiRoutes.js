@@ -127,7 +127,6 @@ module.exports = function(app) {
 
   // Create a custom cocktail
   app.post("/custom_drinks", function(req, res) {
-    console.log(JSON.stringify(req.body))
       // check if user is logged in
     if (req.user) {
       console.log(req.body)
@@ -151,21 +150,16 @@ module.exports = function(app) {
   });
 
   // Delete a cocktail by id
-  app.delete("/api/cocktails/:id", function(req, res) {
-    db.Custom_drink.destroy({ where: { id: req.params.id } }).then(function(
-      dbCocktails
-    ) {
-      res.json(dbCocktails);
-    });
-  });
-
-  app.put("/api/cocktails/:id", function(req, res) {
-    db.Custom_drink.update({ where: { id: req.params.id } }).then(function(
-      dbCocktails
-    ) {
-      res.json(dbCocktails);
-    });
-  });
+  app.delete("/api/delete/custom_page/:id", function(req, res) {
+    db.Custom_drinks.destroy({ 
+      where: { 
+        id: req.params.id 
+      } 
+    })
+    .then(() => {
+      res.status(200).end()
+    })
+  })
 
 
 

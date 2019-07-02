@@ -1,5 +1,14 @@
-<div class="container">
-    <form id="customDrink">
+ <div class="row">
+    <div class="container-fluid text-center titlehero" style="padding: 0px;">
+      <div class="col-md-12">
+        <h1 class="herotext">Create A Drink!</h1>
+      </div>
+    </div>
+  </div>
+
+<div class="container" id="customform">
+  <div class="wrapper">
+        <form id="customDrink">
         <div class="form-row align-items-center">
           <div class="form-group col-md-6">
             <label for="customName">Choose Thy Name Wisely</label>
@@ -7,19 +16,14 @@
           </div>
           <div class="form-group col-md-6">
             <label for="customImgUrl">Add Your Drinks Selfie Here</label>
-            <input type="url" class="form-control" id="customImgUrl">
+            <input type="text" class="form-control" id="customImgUrl">
           </div>
         </div>
         <div class="form-row align-items-center">
           <div class="form-group col-md-4">
             <label for="customAlc">Alcohol?</label>
             <select class="form-control" id="customAlc">
-<<<<<<< HEAD
-              <option placeholder="{{cc.alcoholic}}"></option>  
-              <option ></option>  
-=======
               <option></option>   
->>>>>>> e6868c0153b78bff8d2681f43a71cc2d5282f54f
               <option>Alcoholic</option>
               <option>Non-Alcoholic</option>
             </select>
@@ -85,21 +89,12 @@
         </div>
         <div class="form-row align-items-center">
           <div class="form-group col-6">
-<<<<<<< HEAD
             <label for="customMeasure">Measurements</label>
             <input type="text" class="form-control customMeas" placeholder="How much?"></input>
             <input type="text" class="form-control customMeas"></input>
             <input type="text" class="form-control customMeas"></input>
             <input type="text" class="form-control customMeas"></input>
             <input type="text" class="form-control customMeas"></input>
-=======
-            <label for="customIng">Measurements</label>
-            <input type="text" class="form-control customMeas" placeholder="How much?">
-            <input type="text" class="form-control customMeas">
-            <input type="text" class="form-control customMeas">
-            <input type="text" class="form-control customMeas">
-            <input type="text" class="form-control customMeas">
->>>>>>> e6868c0153b78bff8d2681f43a71cc2d5282f54f
           </div>
           <div class="form-group col-6">
             <label for="customIng">Ingredients</label>
@@ -112,5 +107,7 @@
         </div>
         <button type="submit" class="btn btn-warning btn-block" id="customSave">Save Customized Libation</button>
         </form>
-    </div>    
+
+  </div>
+</div>    
   
