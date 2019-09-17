@@ -3,34 +3,34 @@
 
 <a href="https://project-neat.herokuapp.com/">NEAT</a>
 
-Are you tirsty? Can't you decide what you drink? Want to know new cocktail recipies? 
+Are you thirsty? Can't decide what to drink? Want to find new cocktail recipes? 
 
 Be ready to **Neat your mind up!**
 
-**NEAT UP** is simple cocktail creation and search web project. This project will help the client to find randomize drink, most favorite drink on cocktailDB and show how to make them and ingredients. Also client can add cocktails into their favorite section. Maybe they need to make it later! Maybe client is bartender or like unordinary drinks or has really creative mind to make their or special drink. **NEAT UP** help them to create new drink!
+**NEAT** is simple cocktail creation and search web project. This project will help the client to find randomize drink, most favorite drink on cocktailDB and show how to make them and ingredients. Also client can add cocktails into their favorite section. Maybe they need to make it later! Maybe client is bartender or like unordinary drinks or has really creative mind to make their or special drink. **NEAT UP** help them to create new drink!
 
 
-Web page will start with age asking validation. If client is under 21 they cannot reach the web page. 
+Web page starts with age validation. If client is under 21 they cannot enter the web site. 
 
 ![Image of AgeAsking](./public/assets/ageAsking.png)
 
-After passing age validation **NEAT UP** index page will show most popular and most known 15 drink to clinent. Such as mojito, old fashion...
+After passing age validation **NEAT** index page will show most popular and most known 15 drink to client. Such as mojito, old fashion...
 
 ![Image of IndexPage](./public/assets/IndexPage.png)
 
-If you know what you want, but you don't know how to make it, there is search section! Clients can search from name or ingredients. And save it as favorite or customize them.
+If you know what you want, but you don't know how to make it, there is a search section! Clients can search from name or ingredients. And save it as favorite or customize them.
 
 ![Image of Search](./public/assets/search-by-ing.png)
 
-Are you open for new tastes? Do you like gambling? Randomize function is for you! There is randomize button. If clients click it it will show random one.
+Are you open to new tastes? Do you like gambling? Randomize function is for you! There is a randomize button. If clients click it it will show a random cocktail.
 
 ![Image of randomize](./public/assets/ramdomize.png)
 
-If client click one of the drink the modal pop up the page as modal. And client can see what are inside of the cocktail and how to make it. Also, Clients maybe want to add it as them favorite or create new one with insprired from this cocktail! It is easy with **NEAT UP**.
+If the client clicks one of the drinks a modal is shown with drink information. At this point, clients may want to add it as their favorite or create new one inspired from this cocktail! It is easy with **NEAT**.
 
 ![Image of Modal](./public/assets/Modal.png)
 
-Every client is precious for us. We want to keep them favorities and custom drinks. If clients wants to add one drink as favorite or create one, web page ask to log in. If user haven't sign in yet, they have to sign in first. 
+Every client is precious for us. We want to keep their favorites and custom drinks. If clients want to add one drink as favorite or create one, the web site will prompt to log in. If user has not signed in yet, they have to sign in first. 
 
 ![Image of Sign-in-log-in](./public/assets/log-in-sign-up.png)
 
@@ -43,7 +43,7 @@ If they try one drink and they don't like it. No worries! There is a delete butt
 ![Image of Sign-in-log-in](./public/assets/Custom-drink.png)
 
 
-You know better! You know how to Shake it up! So another one! There is create button to create your own drink. After click it client can see some empty sections. After filling your drink you can save your drink in your profile page. Or you can push customize one. It's up to you!
+You know better! You know how to Shake it up! So another one! There is a create feature to create your own drink. After clicking create drink, client can see empty input sections. After filling your drink you can save your drink in your profile page. Or you can push customize one. It's up to you!
 ![Image of Sign-in-log-in](./public/assets/create-drink1.png)
 
 **Project is created by** 
