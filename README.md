@@ -1,13 +1,13 @@
-# NEAT UP!
+# NEAT!
 ![Image of NeatUp](./public/assets/neat_logo-03-01.png)
 
 <a href="https://project-neat.herokuapp.com/">NEAT</a>
 
 Are you thirsty? Can't decide what to drink? Want to find new cocktail recipes? 
 
-Be ready to **Neat your mind up!**
+Be ready to **Get Neat!**
 
-**NEAT** is simple cocktail creation and search web project. This project will help the client to find randomize drink, most favorite drink on cocktailDB and show how to make them and ingredients. Also client can add cocktails into their favorite section. Maybe they need to make it later! Maybe client is bartender or like unordinary drinks or has really creative mind to make their or special drink. **NEAT UP** help them to create new drink!
+**NEAT** is a simple cocktail creation and search web project. This project will help the client to find random and favorite drinks on cocktailDB and shows how to make them with ingredients. The client can add cocktails into their favorite section so they can more easily find it later! Maybe the client is a bartender or wants to make a different drink then the usual or is in really creative mindset to make a special drink. **NEAT** will help them to create their new drink!
 
 
 Web page starts with age validation. If client is under 21 they cannot enter the web site. 
@@ -61,22 +61,22 @@ You know better! You know how to Shake it up! So another one! There is a create 
 - Şahin Can Barış : https://github.com/SCbaris
 
 Our application used 
-- HTML 5.
-- CSS 3.
-- Bootstrap frameworks to make website mobile responsive.
-- Express/handlebars to route our site pages more .functional.
-- Node external modules Express, Seaquelize to sending and taking datas from database.
-- MySQL database.
-- Node external modules Passport and Bcryptjs to create user passwords and user informations.
-- Axios to taking randomize drink and search.
-- Node.js and core node modules to creating code.
+- HTML 5
+- CSS 3
+- Bootstrap frameworks to make website mobile responsive
+- Express/handlebars to route our site pages more functional
+- Node external modules Express, Sequelize for sending and taking data from database
+- MySQL database
+- Node external modules Passport and Bcryptjs to create user passwords
+- Axios for getting randomize drink and search functions
+- Node.js and core node modules to creating code
 
 Next Features
 Socialization
 	- Make Friends
 	- View/Like/Share/Comment Drinks
 	- Track favorites count
-	- Schedule “NeatUps”
+	- Schedule “Neat-Ups”
 Future Fun Features
 Gamify
 	-Earn badges for making libations
